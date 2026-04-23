@@ -1,4 +1,4 @@
-import { Instagram, Linkedin } from 'lucide-react';
+import { FaLinkedinIn, FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -13,11 +13,10 @@ export default function Footer() {
           MAD PULSE
         </div>
       </div>
-      <div className="flex gap-6 text-[10px] font-bold uppercase tracking-widest">
-        <a href="#" className="hover:text-[#0041D2] transition-colors">Instagram</a>
-        <a href="#" className="hover:text-[#0041D2] transition-colors">LinkedIn</a>
-        <a href="#" className="hover:text-[#0041D2] transition-colors">Vimeo</a>
-      </div>
+      <div className="flex gap-6 text-[14px] font-bold uppercase tracking-widest">
+        <a href="#" className="hover:text-[#0041D2] transition-colors"><FaLinkedinIn /></a>
+        <a href="#" className="hover:text-[#0041D2] transition-colors"><FaInstagram /></a>
+        </div>
     </footer>
   );
 }
