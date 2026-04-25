@@ -27,55 +27,57 @@ export default function HeroCarousel({ onProjectSelect }: HeroCarouselProps) {
   }, []);
 
   return (
-    <div 
-      className="relative h-screen w-full overflow-hidden bg-slate-200 group cursor-pointer"
-      onClick={() => onProjectSelect?.(heroProjects[current])}
-    >
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={current}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.5, ease: 'easeInOut' }}
-          className="absolute inset-0"
-        >
-          <div className="absolute inset-0 bg-black/10 z-10" />
-          <motion.div 
-            initial={{ scale: 1.1 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 8 }}
-            className="w-full h-full relative"
+    <div className="h-screen w-full bg-white pt-24 pb-8 px-4 md:px-8">
+      <div 
+        className="relative h-full w-full overflow-hidden bg-slate-200 group cursor-pointer rounded-[40px] shadow-2xl"
+        onClick={() => onProjectSelect?.(heroProjects[current])}
+      >
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={current}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.5, ease: 'easeInOut' }}
+            className="absolute inset-0"
           >
-            <Image
-              src={heroProjects[current].image}
-              alt={heroProjects[current].title}
-              fill
-              className="object-cover"
-              priority
-            />
-          </motion.div>
-          
-          <div className="absolute bottom-10 left-6 md:left-10 z-20 text-white">
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.5, duration: 1 }}
+            <div className="absolute inset-0 bg-black/10 z-10" />
+            <motion.div 
+              initial={{ scale: 1.1 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 8 }}
+              className="w-full h-full relative"
             >
-              <h1 className="text-3xl md:text-5xl font-light tracking-tight leading-none mb-2 uppercase">
-                {heroProjects[current].title.split(' ').slice(0, -1).join(' ')} <br/>
-                <span className="font-bold italic">{heroProjects[current].title.split(' ').slice(-1)}</span>
-              </h1>
-              <p className="text-[10px] uppercase tracking-[0.3em] opacity-80">
-                {heroProjects[current].location} — {heroProjects[current].year}
-              </p>
+              <Image
+                src={heroProjects[current].image}
+                alt={heroProjects[current].title}
+                fill
+                className="object-cover"
+                priority
+              />
             </motion.div>
-          </div>
-        </motion.div>
-      </AnimatePresence>
+            
+            <div className="absolute bottom-6 left-6 md:left-8 z-20 text-white max-w-xl">
+              <motion.div
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.5, duration: 1 }}
+                className="bg-black/20 backdrop-blur-xl p-6 md:p-8 rounded-[24px] border border-white/10"
+              >
+                <h1 className="text-xl md:text-3xl font-light tracking-tight leading-none mb-3 uppercase">
+                  {heroProjects[current].title.split(' ').slice(0, -1).join(' ')} <br/>
+                  <span className="font-bold italic text-[#0041D2]">{heroProjects[current].title.split(' ').slice(-1)}</span>
+                </h1>
+                <p className="text-[9px] uppercase tracking-[0.4em] opacity-80 decoration-[#0041D2] underline underline-offset-4">
+                  {heroProjects[current].location} — {heroProjects[current].year}
+                </p>
+              </motion.div>
+            </div>
+          </motion.div>
+        </AnimatePresence>
 
-      {/* Progress Bars */}
-      <div className="absolute bottom-10 right-6 md:right-10 z-30 flex gap-2">
+        {/* Progress Bars */}
+        <div className="absolute bottom-10 right-6 md:right-10 z-30 flex gap-3">
         {heroProjects.map((_, i) => (
           <div
             key={i}
@@ -87,5 +89,6 @@ export default function HeroCarousel({ onProjectSelect }: HeroCarouselProps) {
         ))}
       </div>
     </div>
+  </div>
   );
 }

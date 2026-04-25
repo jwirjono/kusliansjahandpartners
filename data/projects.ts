@@ -2,7 +2,7 @@
 export interface Project {
   id: string;
   title: string;
-  category: 'Cultural' | 'Residential' | 'Urban' | 'Institutional';
+  category: string;
   typology: string;
   year: string;
   location: string;
@@ -20,7 +20,7 @@ export const PROJECTS: Project[] = [
   {
     id: '1',
     title: 'Pulse Cultural Center',
-    category: 'Cultural',
+    category: 'Exhibition',
     typology: 'Museum & Exhibition',
     year: '2024',
     location: 'Shenzhen, China',
@@ -40,7 +40,7 @@ export const PROJECTS: Project[] = [
   {
     id: '2',
     title: 'Sky Garden Complex',
-    category: 'Urban',
+    category: 'Mixed Use',
     typology: 'Mixed-use / Commercial',
     year: '2023',
     location: 'Singapore',
@@ -77,7 +77,7 @@ export const PROJECTS: Project[] = [
   {
     id: '4',
     title: 'Crystal Library',
-    category: 'Institutional',
+    category: 'Education',
     typology: 'Library / Education',
     year: '2022',
     location: 'Beijing, China',
@@ -95,7 +95,7 @@ export const PROJECTS: Project[] = [
   {
     id: '5',
     title: 'The Wave Pavilion',
-    category: 'Cultural',
+    category: 'Gallery',
     typology: 'Exhibition Pavilion',
     year: '2021',
     location: 'Tokyo, Japan',
@@ -111,7 +111,7 @@ export const PROJECTS: Project[] = [
   {
     id: '6',
     title: 'Helix Tower',
-    category: 'Urban',
+    category: 'Mixed Use',
     typology: 'Vertical Village',
     year: '2025',
     location: 'Dubai, UAE',

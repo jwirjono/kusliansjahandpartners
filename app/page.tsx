@@ -3,6 +3,7 @@
 import HeroCarousel from '@/components/HeroCarousel';
 import WorkSection from '@/components/WorkSection';
 import AboutSection from '@/components/AboutSection';
+import TeamSection from '@/components/TeamSection';
 import { useProjectModal } from '@/context/ProjectContext';
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <HeroCarousel onProjectSelect={setSelectedProject} />
       <WorkSection onProjectSelect={setSelectedProject} />
       <AboutSection />
+      <TeamSection />
     </div>
   );
 }

@@ -3,10 +3,11 @@
 
 import { motion } from 'motion/react';
 import Image from 'next/image';
+import AboutImage from '@/public/images/aboutUs.png'
 
 export default function AboutSection() {
   return (
-    <section className="py-24 px-6 md:px-12 bg-gray-50 overflow-hidden">
+    <section id="about" className="py-24 px-6 md:px-12 bg-gray-50 overflow-hidden scroll-mt-16">
       <div className="max-w-7xl mx-auto relative">
         <motion.div
            initial={{ scale: 1.2, opacity: 0 }}
@@ -64,10 +65,10 @@ export default function AboutSection() {
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.5, duration: 1 }}
-              className="h-full min-h-[500px] bg-white rounded-t-[200px] overflow-hidden relative"
+              className="h-full min-h-[500px] bg-white rounded-[40px] overflow-hidden relative"
             >
               <Image
-                src="https://images.unsplash.com/photo-1542621334-a254cf47733d?q=80&w=2070&auto=format&fit=crop"
+                src={AboutImage}
                 alt="Architecture Studio"
                 fill
                 className="object-cover"

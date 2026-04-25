@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { PROJECTS, Project } from '@/data/projects';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
+import { ChevronDown } from 'lucide-react';
 
 interface ProjectFilterProps {
   onProjectSelect?: (project: Project) => void;
@@ -13,7 +14,21 @@ interface ProjectFilterProps {
 
 export default function ProjectFilter({ onProjectSelect }: ProjectFilterProps) {
   const [activeCategory, setActiveCategory] = useState<string>('All');
-  const categories = ['All', 'Cultural', 'Residential', 'Urban', 'Institutional'];
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const categories = [
+    'All',
+    'Adaptive Reuse',
+    'Mixed Use',
+    'Office',
+    'Education',
+    'Exhibition',
+    'Gallery',
+    'Residential',
+    'Sports Infrastructure',
+    'Hospitality',
+    'Transportation'
+  ];
 
   const filteredProjects = activeCategory === 'All'
     ? PROJECTS
@@ -21,24 +36,70 @@ export default function ProjectFilter({ onProjectSelect }: ProjectFilterProps) {
 
   return (
     <div className="w-full">
-      {/* Work Spans Section */}
-      <div className="mb-20">
-        <h3 className="text-[10px] font-bold uppercase tracking-[0.4em] text-[#0041D2] mb-6 border-b border-[#0041D2] pb-2 inline-block">
-          OUR WORK SPANS
-        </h3>
-        <div className="flex flex-wrap gap-x-8 md:gap-x-12 gap-y-4 md:gap-y-6">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
+      {/* Filter Bar */}
+      <div className="mb-16 flex flex-col md:flex-row md:items-center justify-between border-b border-slate-100 pb-4 gap-4">
+        <div className="flex items-center gap-8">
+          <button 
+            onClick={() => setActiveCategory('All')}
+            className={cn(
+              "text-[10px] font-bold uppercase tracking-[0.3em] transition-colors",
+              activeCategory === 'All' ? "text-[#0041D2]" : "text-slate-400 hover:text-black"
+            )}
+          >
+            All Projects
+          </button>
+          
+          <div className="relative">
+            <button 
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               className={cn(
-                'text-2xl md:text-8xl font-light tracking-tighter uppercase transition-all duration-500 pb-2 border-b-[4px]',
-                activeCategory === cat ? 'text-[#0041D2] border-[#0041D2]' : 'text-slate-100 border-transparent hover:text-black'
+                "flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] transition-colors",
+                activeCategory !== 'All' ? "text-[#0041D2]" : "text-slate-400 hover:text-black"
               )}
             >
-              {cat}
+              Category {activeCategory !== 'All' && `: ${activeCategory}`}
+              <ChevronDown size={12} className={cn("transition-transform duration-300", isDropdownOpen && "rotate-180")} />
             </button>
-          ))}
+
+            <AnimatePresence>
+              {isDropdownOpen && (
+                <>
+                  <div 
+                    className="fixed inset-0 z-10" 
+                    onClick={() => setIsDropdownOpen(false)}
+                  />
+                  <motion.div 
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    className="absolute top-full left-0 mt-4 bg-white border border-slate-100 shadow-xl z-20 min-w-[240px] rounded-2xl overflow-hidden p-2"
+                  >
+                    <div className="grid grid-cols-1 gap-1">
+                      {categories.slice(1).map((cat) => (
+                        <button
+                          key={cat}
+                          onClick={() => {
+                            setActiveCategory(cat);
+                            setIsDropdownOpen(false);
+                          }}
+                          className={cn(
+                            "text-left px-4 py-3 text-[10px] font-medium uppercase tracking-widest transition-colors rounded-xl",
+                            activeCategory === cat ? "bg-[#0041D2] text-white" : "hover:bg-slate-50 text-slate-600"
+                          )}
+                        >
+                          {cat}
+                        </button>
+                      ))}
+                    </div>
+                  </motion.div>
+                </>
+              )}
+            </AnimatePresence>
+          </div>
+        </div>
+
+        <div className="text-[10px] font-medium text-slate-400 uppercase tracking-widest">
+          Showing {filteredProjects.length} Projects
         </div>
       </div>
 
@@ -56,12 +117,13 @@ export default function ProjectFilter({ onProjectSelect }: ProjectFilterProps) {
               className="group cursor-pointer border-b border-slate-50 pb-8"
               onClick={() => onProjectSelect?.(project)}
             >
-              <div className="aspect-square bg-slate-50 overflow-hidden mb-6 relative">
+              <div className="aspect-square bg-slate-50 overflow-hidden mb-6 relative px] rounded-[40px]">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
                   className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
+                  referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-[#0041D2]/10 opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>

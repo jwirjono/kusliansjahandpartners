@@ -74,7 +74,7 @@ export default function SearchModal({ isOpen, onClose, onProjectSelect }: Search
                         }}
                         className="group flex flex-col md:flex-row gap-6 items-center border-b border-slate-50 pb-8 hover:bg-slate-50 p-4 transition-colors cursor-pointer"
                       >
-                        <div className="w-full md:w-32 aspect-video overflow-hidden bg-slate-100 relative">
+                        <div className="w-full md:w-32 aspect-video overflow-hidden bg-slate-100 relative rounded-xl">
                           <Image
                             src={project.image}
                             alt={project.title}

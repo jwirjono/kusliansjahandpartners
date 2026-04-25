@@ -24,7 +24,7 @@ export default function WorkSection({ onProjectSelect }: WorkSectionProps) {
             transition={{ duration: 1 }}
           >
             <h2 className="text-[10px] font-bold uppercase tracking-[0.5em] text-[#0041D2] mb-6 md:mb-8 leading-none border-b border-[#0041D2] pb-2 inline-block">
-              Philosophy & Method
+              Featured Works
             </h2>
             <h3 className="text-3xl md:text-6xl font-light tracking-tighter leading-tight uppercase">
               Designing for the <span className="text-[#0041D2] italic font-medium">Future Humanity</span>.
@@ -54,7 +54,7 @@ export default function WorkSection({ onProjectSelect }: WorkSectionProps) {
               onClick={() => onProjectSelect?.(project)}
             >
               <div className="space-y-6">
-                <div className="relative aspect-[16/10] overflow-hidden bg-slate-50">
+                <div className="relative aspect-[16/10] overflow-hidden bg-slate-50 rounded-[40px]">
                   <Image
                     src={project.image}
                     alt={project.title}
