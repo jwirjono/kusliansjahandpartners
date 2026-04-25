@@ -15,7 +15,7 @@ const TEAM = [
     bio: "Registered Architect and design professional with expertise in delivering commercially driven, buildable design solutions across retail, mixed-use, and institutional projects."
   },
   {
-    name: "Karyadi Kristofan",
+    name: "Dr. Ar. Ir. Yohanes Karyadi Kusliansjah, MT., IAI",
     role: "Architect",
     image: karyadi,
     bio: "Leads our sustainability initiatives, ensuring every structure breathes and evolves with its environment."
@@ -68,7 +68,7 @@ export default function TeamSection() {
               </div>
 
               <div className={cn(
-                "relative aspect-[4/5] overflow-hidden rounded-[40px] shadow-2xl bg-gray-100",
+                "relative aspect-[4/5] overflow-hidden rounded-[32px] shadow-2xl bg-gray-100",
                 index % 2 === 1 ? "md:order-1" : ""
               )}>
                 <Image

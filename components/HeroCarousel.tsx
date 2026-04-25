@@ -29,7 +29,7 @@ export default function HeroCarousel({ onProjectSelect }: HeroCarouselProps) {
   return (
     <div className="h-screen w-full bg-white pt-24 pb-8 px-4 md:px-8">
       <div 
-        className="relative h-full w-full overflow-hidden bg-slate-200 group cursor-pointer rounded-[40px] shadow-2xl"
+        className="relative h-full w-full overflow-hidden bg-slate-200 group cursor-pointer rounded-[32px] shadow-2xl"
         onClick={() => onProjectSelect?.(heroProjects[current])}
       >
         <AnimatePresence mode="wait">

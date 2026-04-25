@@ -51,7 +51,7 @@ export default function Navbar({ onSearchOpen }: NavbarProps) {
   return (
     <nav
       className={cn(
-        'fixed top-0 left-0 w-full z-[100] h-16 transition-all duration-500 px-6 md:px-10 flex items-center justify-between',
+        'fixed top-0 left-0 w-full z-[100] h-20 transition-all duration-500 px-6 md:px-10 flex items-center justify-between',
         'bg-white/80 backdrop-blur-xl border-b border-white/20',
         (isScrolled || isMobileMenuOpen) && 'bg-slate-400/25 shadow-sm border-white/10'
       )}
@@ -76,7 +76,7 @@ export default function Navbar({ onSearchOpen }: NavbarProps) {
         <Link
           href="/projects"
           className={cn(
-            'text-[10px] font-bold uppercase tracking-[0.2em] transition-all hover:text-[#0041D2] relative group',
+            'text-[12px] font-bold uppercase tracking-[0.2em] transition-all hover:text-[#0041D2] relative group',
             pathname === '/projects' ? 'text-[#0041D2]' : 'text-slate-900'
           )}
         >
@@ -90,7 +90,7 @@ export default function Navbar({ onSearchOpen }: NavbarProps) {
           href="/#about"
           onClick={(e) => handleLinkClick(e, '/#about')}
           className={cn(
-            'text-[10px] font-bold uppercase tracking-[0.2em] transition-all hover:text-[#0041D2] text-slate-900 relative group'
+            'text-[12px] font-bold uppercase tracking-[0.2em] transition-all hover:text-[#0041D2] text-slate-900 relative group'
           )}
         >
           ABOUT
@@ -100,7 +100,7 @@ export default function Navbar({ onSearchOpen }: NavbarProps) {
           href="/#team"
           onClick={(e) => handleLinkClick(e, '/#team')}
           className={cn(
-            'text-[10px] font-bold uppercase tracking-[0.2em] transition-all hover:text-[#0041D2] text-slate-900 relative group'
+            'text-[12px] font-bold uppercase tracking-[0.2em] transition-all hover:text-[#0041D2] text-slate-900 relative group'
           )}
         >
           TEAM
@@ -109,7 +109,7 @@ export default function Navbar({ onSearchOpen }: NavbarProps) {
         <Link
           href="/contact"
           className={cn(
-            'text-[10px] font-bold uppercase tracking-[0.2em] transition-all hover:text-[#0041D2] relative group',
+            'text-[12px] font-bold uppercase tracking-[0.2em] transition-all hover:text-[#0041D2] relative group',
             pathname === '/contact' ? 'text-[#0041D2]' : 'text-slate-900'
           )}
         >

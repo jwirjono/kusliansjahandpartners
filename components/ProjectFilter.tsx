@@ -117,7 +117,7 @@ export default function ProjectFilter({ onProjectSelect }: ProjectFilterProps) {
               className="group cursor-pointer border-b border-slate-50 pb-8"
               onClick={() => onProjectSelect?.(project)}
             >
-              <div className="aspect-square bg-slate-50 overflow-hidden mb-6 relative px] rounded-[40px]">
+              <div className="aspect-square bg-slate-50 overflow-hidden mb-6 relative px] rounded-[32px]">
                 <Image
                   src={project.image}
                   alt={project.title}
