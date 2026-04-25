@@ -65,7 +65,7 @@ export default function AboutSection() {
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.5, duration: 1 }}
-              className="h-full min-h-[500px] bg-white rounded-[32px] overflow-hidden relative"
+              className="h-full min-h-[500px] bg-white rounded-[20px] overflow-hidden relative"
             >
               <Image
                 src={AboutImage}

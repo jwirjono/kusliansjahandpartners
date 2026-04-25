@@ -54,7 +54,7 @@ export default function WorkSection({ onProjectSelect }: WorkSectionProps) {
               onClick={() => onProjectSelect?.(project)}
             >
               <div className="space-y-6">
-                <div className="relative aspect-[16/10] overflow-hidden bg-slate-50 rounded-[32px]">
+                <div className="relative aspect-[16/10] overflow-hidden bg-slate-50 rounded-[20px]">
                   <Image
                     src={project.image}
                     alt={project.title}

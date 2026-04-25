@@ -66,7 +66,7 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: "100%", opacity: 0 }}
             transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-            className="bg-white w-full h-full md:h-[85vh] max-w-7xl shadow-2xl overflow-hidden flex flex-col md:flex-row relative md:rounded-[32px]"
+            className="bg-white w-full h-full md:h-[85vh] max-w-7xl shadow-2xl overflow-hidden flex flex-col md:flex-row relative md:rounded-[20px]"
           >
             {/* Close Button */}
             <button

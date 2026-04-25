@@ -68,7 +68,7 @@ export default function TeamSection() {
               </div>
 
               <div className={cn(
-                "relative aspect-[4/5] overflow-hidden rounded-[32px] shadow-2xl bg-gray-100",
+                "relative aspect-[4/5] overflow-hidden rounded-[20px] shadow-2xl bg-gray-100",
                 index % 2 === 1 ? "md:order-1" : ""
               )}>
                 <Image
