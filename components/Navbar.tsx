@@ -58,14 +58,14 @@ export default function Navbar({ onSearchOpen }: NavbarProps) {
     >
       <Link 
         href="/" 
-        className="relative z-[110]"
+        className="relative z-[90]"
         onClick={() => setIsMobileMenuOpen(false)}
       >
               <Image
                 src={mainLogo}
                 alt="mainLogo"
-                width={120}
-                height={40}
+                width={200}
+                height={80}
                 priority
                 className="h-8 w-auto object-contain"
               />

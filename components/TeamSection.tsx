@@ -5,6 +5,7 @@ import { motion } from 'motion/react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import kevin from '@/public/images/Kevin.png';
+import karyadi from '@/public/images/Karyadi.jpeg';
 
 const TEAM = [
   {
@@ -15,8 +16,8 @@ const TEAM = [
   },
   {
     name: "Karyadi Kristofan",
-    role: "Design Director",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop",
+    role: "Architect",
+    image: karyadi,
     bio: "Leads our sustainability initiatives, ensuring every structure breathes and evolves with its environment."
   },
   {
