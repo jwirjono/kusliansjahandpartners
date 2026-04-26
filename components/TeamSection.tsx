@@ -19,12 +19,6 @@ const TEAM = [
     role: "Architect",
     image: karyadi,
     bio: "Leads our sustainability initiatives, ensuring every structure breathes and evolves with its environment."
-  },
-  {
-    name: "Marcus Thorne",
-    role: "Technical Principal",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop",
-    bio: "The bridge between impossible designs and structural reality. Specializes in advanced parametric modeling."
   }
 ];
 

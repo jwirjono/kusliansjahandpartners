@@ -77,11 +77,12 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
             </button>
 
             {/* Left Column: Carousel/Gallery */}
-            <div className="flex-1 bg-slate-50 relative group/carousel h-[60vh] md:h-full flex flex-col md:flex-row overflow-hidden md:rounded-[24px] md:m-6">
+            <div className="relative w-full h-[45vh] md:h-full overflow-hidden">
               {/* Mobile Flex Gallery */}
               <div 
                 ref={mobileScrollRef}
                 className="md:hidden flex w-full h-full overflow-x-auto snap-x snap-mandatory scrollbar-hide"
+                style={{ scrollSnapType: "x mandatory" }}
                 onScroll={(e) => {
                   const scrollLeft = e.currentTarget.scrollLeft;
                   const width = e.currentTarget.offsetWidth;
@@ -92,12 +93,12 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
                 }}
               >
                 {project.gallery.map((img, i) => (
-                  <div key={i} className="flex-shrink-0 w-full h-full snap-center relative overflow-hidden">
+                  <div key={i} className="flex-shrink-0 w-full h-full snap-center relative">
                     <motion.div
                       initial={{ scale: 1.1 }}
                       whileInView={{ scale: 1 }}
                       transition={{ duration: 10 }}
-                      className="w-full h-full"
+                      className="relative w-full h-full"
                     >
                       <Image
                         src={img}
