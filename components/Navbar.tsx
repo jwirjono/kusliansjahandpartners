@@ -58,7 +58,7 @@ export default function Navbar({ onSearchOpen }: NavbarProps) {
     >
       <Link 
         href="/" 
-        className="relative z-[90] w-12 h-8"
+        className="relative z-[90] w-12 h-16"
         onClick={() => setIsMobileMenuOpen(false)}
       >
               <Image
