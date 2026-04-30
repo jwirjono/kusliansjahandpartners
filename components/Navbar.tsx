@@ -58,17 +58,15 @@ export default function Navbar({ onSearchOpen }: NavbarProps) {
     >
       <Link 
         href="/" 
-        className="relative z-[90] w-20 h-12"
+        className="relative z-[110] flex items-center gap-2"
         onClick={() => setIsMobileMenuOpen(false)}
       >
-              <Image
-                src={mainLogo}
-                alt="mainLogo"
-                width={200}
-                height={80}
-                priority
-                className="h-12 w-auto object-contain"
-              />
+        <Image 
+          src={mainLogo} 
+          alt="mainLogo"
+          width={140}
+          height={70} 
+        />
       </Link>
 
       {/* Desktop Menu */}
