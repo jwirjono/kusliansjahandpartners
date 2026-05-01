@@ -9,8 +9,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "MAD PULSE | Architecture Firm",
-  description: "Computational and organic architecture for the future humanity.",
+  title: "Kusliansjah and Partners | Architecture Firm",
+  description: "Architecture Firm based on Bandung, Indonesia since 2005 with proficiency handling multiple projects",
 };
 
 export default function RootLayout({
