@@ -32,7 +32,7 @@ export default function ProjectFilter({ onProjectSelect }: ProjectFilterProps) {
 
   const filteredProjects = activeCategory === 'All'
     ? PROJECTS
-    : PROJECTS.filter(p => p.category === activeCategory);
+    : PROJECTS.filter(p => p.category.includes(activeCategory));
 
   return (
     <div className="w-full">
@@ -129,7 +129,7 @@ export default function ProjectFilter({ onProjectSelect }: ProjectFilterProps) {
               </div>
               <div className="space-y-2">
                 <p className="text-[10px] font-bold uppercase tracking-widest text-[#0041D2]">
-                  {project.category} — {project.location} {project.year}
+                  {project.category.join(' / ')} — {project.location} {project.year}
                 </p>
                 <h3 className="text-2xl font-light tracking-tight uppercase group-hover:text-[#0041D2] transition-colors leading-none">
                   {project.title}

@@ -201,6 +201,15 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
                     <p className="text-sm font-light leading-relaxed text-slate-600 uppercase">
                       {project.description}
                     </p>
+                    {project.details.team && (
+                      <div className="flex justify-between items-start mt-6">
+                        <div className="text-sm font-light leading-relaxed text-slate-600 uppercase">
+                          {project.details.team.map((member, index) => (
+                            <div key={index} className='mb-4'>{member}</div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                   
                   <div className="grid grid-cols-1 gap-6 pt-8 border-t border-slate-100">
