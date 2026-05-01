@@ -12,12 +12,14 @@ const TEAM = [
     name: "Ar. Kevin Kristofan Rinaldi Kusliansjah, IAI",
     role: "Founding Partner / Lead Architect",
     image: kevin,
+    portfolio:"https://www.linkedin.com/in/jevon-wirjono-48b60215a/",
     bio: "Registered Architect and design professional with expertise in delivering commercially driven, buildable design solutions across retail, mixed-use, and institutional projects."
   },
   {
     name: "Dr. Ar. Ir. Yohanes Karyadi Kusliansjah, MT., IAI",
     role: "Architect",
     image: karyadi,
+    portfolio:"https://www.linkedin.com/in/jevon-wirjono-48b60215a/",
     bio: "Leads our sustainability initiatives, ensuring every structure breathes and evolves with its environment."
   }
 ];
@@ -56,8 +58,15 @@ export default function TeamSection() {
                   {member.bio}
                 </p>
                 <div className="mt-8 pt-8 border-t border-gray-100 max-w-sm flex items-center group cursor-pointer">
-                   <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-black transition-colors group-hover:text-[#0041D2]">View Portfolio</p>
-                   <div className="ml-4 h-[1px] w-8 bg-black transition-all group-hover:w-12 group-hover:bg-[#0041D2]" />
+                  <a
+                    href={member.portfolio}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 text-[10px] uppercase tracking-[0.3em] font-bold text-black hover:text-[#0041D2] transition-colors"
+                  >
+                    View Portfolio
+                    <div className="h-[1px] w-8 bg-black transition-all group-hover:w-12" />
+                  </a>
                 </div>
               </div>
 
