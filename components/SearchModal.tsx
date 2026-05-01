@@ -111,7 +111,17 @@ export default function SearchModal({ isOpen, onClose, onProjectSelect }: Search
                     <div>
                       <h3 className="text-xs font-bold uppercase tracking-[0.3em] text-gray-400 mb-6">Popular Categories</h3>
                       <div className="flex flex-wrap gap-3">
-                        {['Cultural', 'Urban', 'Residential', 'Office'].map(cat => (
+                        {['Adaptive Reuse',
+                          'Mixed Use',
+                          'Office',
+                          'Education',
+                          'Exhibition',
+                          'Gallery',
+                          'Residential',
+                          'Sports Infrastructure',
+                          'Hospitality',
+                          'Transportation'
+                        ].map(cat => (
                           <button
                             key={cat}
                             onClick={() => setQuery(cat)}

@@ -49,11 +49,12 @@ export default function Navbar({ onSearchOpen }: NavbarProps) {
   const isHome = pathname === '/';
 
   return (
-    <nav
+    <>
+      <nav
       className={cn(
         'fixed top-0 left-0 w-full z-[100] h-20 transition-all duration-500 px-6 md:px-10 flex items-center justify-between',
-        'bg-white/80 backdrop-blur-xl border-b border-white/20',
-        (isScrolled || isMobileMenuOpen) && 'bg-slate-400/25 shadow-sm border-white/10'
+        'bg-white/90 backdrop-blur-xl border-b border-white/20',
+        (isScrolled || isMobileMenuOpen) && 'bg-white shadow-sm border-white/10'
       )}
     >
       <Link 
@@ -150,17 +151,57 @@ export default function Navbar({ onSearchOpen }: NavbarProps) {
       </div>
 
       {/* Mobile Menu Overlay */}
-      <AnimatePresence>
+      
+    </nav>
+    <AnimatePresence>
   {isMobileMenuOpen && (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className="fixed inset-0 z-[120] backdrop-blur-xl bg-slate-400/25 flex flex-col"
+      className="fixed inset-0 z-[120] backdrop-blur-xl bg-white-400/50 flex flex-col"
     >
+
+      <div className="flex items-center justify-between px-6 h-20">
+        {/* Logo */}
+        <Link 
+          href="/" 
+          onClick={() => setIsMobileMenuOpen(false)}
+        >
+          <Image 
+            src={mainLogo}
+            alt="mainLogo"
+            width={140}
+            height={70}
+          />
+        </Link>
+
+        {/* Right controls */}
+        <div className="flex items-center gap-2">
+          
+          <button
+            onClick={() => {
+            setIsMobileMenuOpen(false);  
+            onSearchOpen();              
+          }}
+            className="p-2"
+          >
+            <Search size={20} />
+          </button>
+
+          <button
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="p-2 text-[#0041D2]"
+          >
+            <X size={24} />
+          </button>
+
+        </div>
+      </div>
+
       {/* Content Wrapper */}
-      <div className="flex flex-col justify-between h-full px-6 pt-24 pb-10">
+      <div className="flex flex-col justify-between h-full px-6 pt-8 pb-10">
         
         {/* Menu Items */}
         <div className="flex flex-col gap-6 text-3xl font-bold uppercase tracking-tight">
@@ -200,6 +241,28 @@ export default function Navbar({ onSearchOpen }: NavbarProps) {
             </motion.div>
           ))}
         </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 + 5 * 0.05 }}
+        >
+          <Link
+  href="/careers"
+  onClick={() => setIsMobileMenuOpen(false)}
+  className="flex items-center gap-2 text-md uppercase text-[#0041D2] underline underline-offset-4 mb-4"
+>
+  <span>LINKEDIN</span>
+  <ChevronRight size={16} />
+</Link>
+<Link
+  href="/careers"
+  onClick={() => setIsMobileMenuOpen(false)}
+  className="flex items-center gap-2 text-md uppercase text-[#0041D2] underline underline-offset-4 mb-4"
+>
+  <span>INSTAGRAM</span>
+  <ChevronRight size={16} />
+</Link>
+        </motion.div>
 
         {/* Bottom Section */}
         <div className="flex flex-col gap-6">
@@ -208,9 +271,9 @@ export default function Navbar({ onSearchOpen }: NavbarProps) {
           </div>
 
           <div className="text-xs uppercase tracking-widest text-slate-400">
-            MAD PULSE STUDIO
+            Kusliansjah&Partners
             <br />
-            BEIJING / LOS ANGELES / ROME
+            BANDUNG
           </div>
         </div>
 
@@ -218,6 +281,7 @@ export default function Navbar({ onSearchOpen }: NavbarProps) {
     </motion.div>
   )}
 </AnimatePresence>
-    </nav>
+    </>
+    
   );
 }
