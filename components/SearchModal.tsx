@@ -17,11 +17,15 @@ export default function SearchModal({ isOpen, onClose, onProjectSelect }: Search
 
   const filteredProjects = query.trim() === ''
     ? []
-    : PROJECTS.filter(p =>
-        p.title.toLowerCase().includes(query.toLowerCase()) ||
-        p.category.toLowerCase().includes(query.toLowerCase()) ||
-        p.location.toLowerCase().includes(query.toLowerCase())
-      );
+    : PROJECTS.filter(p => {
+        const q = query.toLowerCase();
+
+        return (
+          p.title.toLowerCase().includes(q) ||
+          p.category.some(cat => cat.toLowerCase().includes(q)) ||
+          p.location.toLowerCase().includes(q)
+        );
+      });
 
   useEffect(() => {
     if (isOpen) {
