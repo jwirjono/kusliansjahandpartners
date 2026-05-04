@@ -40,7 +40,7 @@ export default function AboutSection() {
               className="space-y-8 max-w-xl text-lg text-gray-600 font-light leading-relaxed"
             >
               <p>
-                Founded in 2012, MAD PULSE Architecture is a global practice that challenges conventional urbanism. We look to the natural world—its movement, its logic, and its resilience—to find the blueprints for the cities of tomorrow.
+                Founded in 2012, Kusliansjah and Partners Architecture is a global practice that challenges conventional urbanism. We look to the natural world—its movement, its logic, and its resilience—to find the blueprints for the cities of tomorrow.
               </p>
               <p>
                 Our team of 150+ visionaries works across offices in Beijing, Los Angeles, and Tokyo, bringing a boundaryless approach to cultural, residential, and urban design.
