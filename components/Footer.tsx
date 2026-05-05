@@ -14,9 +14,9 @@ export default function Footer() {
         </div>
       </div>
       <div className="flex gap-6 text-[10px] font-bold uppercase tracking-widest">
-        <a href="#" className="hover:text-[#0041D2] transition-colors">Instagram</a>
-        <a href="#" className="hover:text-[#0041D2] transition-colors">LinkedIn</a>
-        <a href="#" className="hover:text-[#0041D2] transition-colors">Vimeo</a>
+        <a href="https://www.instagram.com/kusliansjahpartners" className="hover:text-[#0041D2] transition-colors">Instagram</a>
+        <a href="https://www.linkedin.com/company/kusliansjah-partners/" className="hover:text-[#0041D2] transition-colors">LinkedIn</a>
+        <a href="https://wa.me/6281395202690" className="hover:text-[#0041D2] transition-colors">Whatsapp</a>
       </div>
     </footer>
   );
