@@ -15,6 +15,7 @@ interface ProjectDetailModalProps {
 export default function ProjectDetailModal({ project, onClose }: ProjectDetailModalProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isZoomed, setIsZoomed] = useState(false);
+  const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
   const mobileScrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -22,6 +23,7 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
       document.body.style.overflow = 'hidden';
       document.body.style.height = '100vh';
       setCurrentSlide(0);
+      setIsDescriptionExpanded(false);
     } else {
       document.body.style.overflow = '';
       document.body.style.height = '';
@@ -51,6 +53,9 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + project.gallery.length) % project.gallery.length);
   };
+
+  const descriptionCharCount = project.description.join(' ').length;
+  const isDescriptionLong = descriptionCharCount > 220 || project.description.length > 3;
 
   return (
     <AnimatePresence>
@@ -197,10 +202,28 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
 
                 <div className="space-y-8">
                   <div>
-                    <p className="text-[11px] font-bold uppercase tracking-widest text-slate-300 mb-4">Revitalisasi Kawasan Panti Karya: Simpul Permeabilitas Urban & Oase Sinematik Kota Bandung</p>
-                    <p className="text-[11px] font-light leading-relaxed text-slate-600 uppercase">
-                      {project.description}
+                    <p className="text-[11px] font-bold uppercase tracking-widest text-slate-300 mb-4">{project.descriptionTitle}</p>
+                    <p
+                      className={cn(
+                        "text-[11px] font-light leading-relaxed text-slate-600 uppercase",
+                        !isDescriptionExpanded && isDescriptionLong && "line-clamp-6"
+                      )}
+                    >
+                      {project.description.map((line, index) => (
+                        <span key={index}>
+                          {line}
+                          {index < project.description.length - 1 && <div><br /></div>}
+                        </span>
+                      ))}
                     </p>
+                    {isDescriptionLong && (
+                      <button
+                        onClick={() => setIsDescriptionExpanded((prev) => !prev)}
+                        className="mt-3 text-[10px] font-bold uppercase tracking-widest text-[#0041D2] hover:underline"
+                      >
+                        {isDescriptionExpanded ? 'Read Less' : 'Read More'}
+                      </button>
+                    )}
                   </div>
                   
                   <div className="grid grid-cols-1 gap-6 pt-8 border-t border-slate-100">
@@ -214,20 +237,14 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
                     </div>
                     <div className="flex justify-between items-end">
                       <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mr-[10px]">Typology</span>
-                      <span className="text-sm font-medium uppercase">{project.typology}</span>
-                    </div>
-                    <div className="flex justify-between items-start">
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mr-[10px]">Category</span>
-                      <ul className="text-sm font-medium uppercase text-right list-none">
-                        {project.category?.map((cat, index) => (
-                          <li key={index} className="flex items-center justify-end gap-1.5 mb-[3px]">
-                            <span>{cat}</span>
-                          </li>
-                        ))}
-                      </ul>
+                      <span className="text-sm font-medium uppercase text-right">{project.typology}</span>
                     </div>
                   </div>
                   <div className="grid grid-cols-1 gap-6 pt-8 border-t border-slate-100">
+                      <div className="flex justify-between items-end">
+                        <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mr-[10px]">Project Stage</span>
+                        <span className="text-sm font-medium uppercase text-right">{project.stage}</span>
+                      </div>
                     {project.details.siteArea && (
                       <div className="flex justify-between items-end">
                         <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mr-[10px]">Site Area</span>
@@ -246,7 +263,7 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
                       <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mr-[5px]">Principal Partners</span>
                       <ul className="text-sm font-medium uppercase text-right list-none">
                         {project.details.teamP?.map((cat, index) => (
-                          <li key={index} className="flex items-center justify-end gap-1.5 mb-[3px]">
+                          <li key={index} className="flex items-center justify-end gap-1.5 mb-[3px] text-right">
                             <span>{cat}</span>
                           </li>
                         ))}
@@ -256,7 +273,7 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
                       <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mr-[5px]">Associate Partners</span>
                       <ul className="text-sm font-medium uppercase text-right list-none">
                         {project.details.teamA?.map((cat, index) => (
-                          <li key={index} className="flex items-center justify-end gap-1.5 mb-[3px]">
+                          <li key={index} className="flex items-center justify-end gap-1.5 mb-[3px] text-right">
                             <span>{cat}</span>
                           </li>
                         ))}
