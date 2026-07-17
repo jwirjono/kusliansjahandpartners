@@ -197,49 +197,71 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
 
                 <div className="space-y-8">
                   <div>
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-slate-300 mb-4">Vision</p>
-                    <p className="text-sm font-light leading-relaxed text-slate-600 uppercase">
+                    <p className="text-[11px] font-bold uppercase tracking-widest text-slate-300 mb-4">Revitalisasi Kawasan Panti Karya: Simpul Permeabilitas Urban & Oase Sinematik Kota Bandung</p>
+                    <p className="text-[11px] font-light leading-relaxed text-slate-600 uppercase">
                       {project.description}
                     </p>
-                    {project.details.team && (
-                      <div className="flex justify-between items-start mt-6">
-                        <div className="text-sm font-light leading-relaxed text-slate-600 uppercase">
-                          {project.details.team.map((member, index) => (
-                            <div key={index} className='mb-4'>{member}</div>
-                          ))}
-                        </div>
-                      </div>
-                    )}
                   </div>
                   
                   <div className="grid grid-cols-1 gap-6 pt-8 border-t border-slate-100">
                     <div className="flex justify-between items-end">
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Location</span>
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mr-[10px]">Location</span>
                       <span className="text-sm font-medium uppercase">{project.location}</span>
                     </div>
                     <div className="flex justify-between items-end">
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Year</span>
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mr-[10px]">Year</span>
                       <span className="text-sm font-medium uppercase">{project.year}</span>
                     </div>
                     <div className="flex justify-between items-end">
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Typology</span>
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mr-[10px]">Typology</span>
                       <span className="text-sm font-medium uppercase">{project.typology}</span>
                     </div>
+                    <div className="flex justify-between items-start">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mr-[10px]">Category</span>
+                      <ul className="text-sm font-medium uppercase text-right list-none">
+                        {project.category?.map((cat, index) => (
+                          <li key={index} className="flex items-center justify-end gap-1.5 mb-[3px]">
+                            <span>{cat}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
-
                   <div className="grid grid-cols-1 gap-6 pt-8 border-t border-slate-100">
                     {project.details.siteArea && (
                       <div className="flex justify-between items-end">
-                        <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Site Area</span>
-                        <span className="text-lg font-light tracking-tighter uppercase">{project.details.siteArea}</span>
+                        <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mr-[10px]">Site Area</span>
+                        <span className="text-sm font-medium uppercase">{project.details.siteArea}</span>
                       </div>
                     )}
                     {project.details.buildingArea && (
                       <div className="flex justify-between items-end">
-                        <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Building Area</span>
-                        <span className="text-lg font-light tracking-tighter uppercase">{project.details.buildingArea}</span>
+                        <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mr-[10px]">Building Area</span>
+                        <span className="text-sm font-medium uppercase">{project.details.buildingArea}</span>
                       </div>
                     )}
+                  </div>
+                  <div className="grid grid-cols-1 gap-6 pt-8 border-t border-slate-100">
+                    <div className="flex justify-between items-start">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mr-[5px]">Principal Partners</span>
+                      <ul className="text-sm font-medium uppercase text-right list-none">
+                        {project.details.teamP?.map((cat, index) => (
+                          <li key={index} className="flex items-center justify-end gap-1.5 mb-[3px]">
+                            <span>{cat}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="flex justify-between items-start">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mr-[5px]">Associate Partners</span>
+                      <ul className="text-sm font-medium uppercase text-right list-none">
+                        {project.details.teamA?.map((cat, index) => (
+                          <li key={index} className="flex items-center justify-end gap-1.5 mb-[3px]">
+                            <span>{cat}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
 

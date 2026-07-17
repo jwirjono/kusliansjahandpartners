@@ -15,7 +15,8 @@ export interface Project {
     siteArea?: string;
     buildingArea?: string;
     height?: string;
-    team?: string[];
+    teamP: string[];
+    teamA: string[];
   };
 }
 
@@ -34,7 +35,8 @@ export const PROJECTS: Project[] = [
       siteArea: '45,000 sqm',
       buildingArea: '120,000 sqm',
       height: '32m',
-      team:["Principal Partners: 	Ar. Kevin Kristofan Rinaldi Kusliansjah, IAI","Associate Partners:	Albertus Thomas; Steffan Christian"]
+      teamP:["Ar. Kevin Kristofan Rinaldi Kusliansjah, IAI"],
+      teamA:["Albertus Thomas", "Steffan Christian"]
     }
   },
     {
@@ -51,7 +53,8 @@ export const PROJECTS: Project[] = [
       siteArea: '45,000 sqm',
       buildingArea: '120,000 sqm',
       height: '32m',
-      team:["Principal Partners: 	Ar. Kevin Kristofan Rinaldi Kusliansjah, IAI","Associate Partners:	Albertus Thomas; Steffan Christian"]
+      teamP:["Principal Partners: 	Ar. Kevin Kristofan Rinaldi Kusliansjah, IAI","Associate Partners:	Albertus Thomas; Steffan Christian"],
+      teamA:[]
     }
   },
     {
@@ -68,7 +71,8 @@ export const PROJECTS: Project[] = [
       siteArea: '45,000 sqm',
       buildingArea: '120,000 sqm',
       height: '32m',
-      team:[]
+      teamP:[],
+      teamA:[]
     }
   },
     {
@@ -85,7 +89,8 @@ export const PROJECTS: Project[] = [
       siteArea: '45,000 sqm',
       buildingArea: '120,000 sqm',
       height: '32m',
-      team:[]
+      teamP:[],
+      teamA:[]
     }
   },
   {
@@ -102,7 +107,8 @@ export const PROJECTS: Project[] = [
       siteArea: '45,000 sqm',
       buildingArea: '120,000 sqm',
       height: '32m',
-      team:[]
+      teamP:[],
+      teamA:[]
     }
   },
   {
@@ -119,7 +125,8 @@ export const PROJECTS: Project[] = [
       siteArea: '45,000 sqm',
       buildingArea: '120,000 sqm',
       height: '32m',
-      team:[]
+      teamP:[],
+      teamA:[]
     }
   },
   {
@@ -136,7 +143,8 @@ export const PROJECTS: Project[] = [
       siteArea: '45,000 sqm',
       buildingArea: '120,000 sqm',
       height: '32m',
-      team:[]
+      teamP:[],
+      teamA:[]
     }
   },
   {
@@ -153,7 +161,8 @@ export const PROJECTS: Project[] = [
       siteArea: '45,000 sqm',
       buildingArea: '120,000 sqm',
       height: '32m',
-      team:[]
+      teamP:[],
+      teamA:[]
     }
   },
 ];
