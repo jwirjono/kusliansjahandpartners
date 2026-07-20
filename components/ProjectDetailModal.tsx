@@ -18,7 +18,6 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
   const [canScrollStripLeft, setCanScrollStripLeft] = useState(false);
   const [canScrollStripRight, setCanScrollStripRight] = useState(false);
-  const mobileScrollRef = useRef<HTMLDivElement>(null);
   const galleryStripRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -36,16 +35,6 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
       document.body.style.height = '';
     };
   }, [project]);
-
-  useEffect(() => {
-    if (mobileScrollRef.current) {
-      const width = mobileScrollRef.current.offsetWidth;
-      mobileScrollRef.current.scrollTo({
-        left: currentSlide * width,
-        behavior: 'smooth'
-      });
-    }
-  }, [currentSlide]);
 
   const updateStripScrollState = () => {
     const el = galleryStripRef.current;
@@ -108,46 +97,10 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
               <X size={24} strokeWidth={2} />
             </button>
 
-            {/* Left Column: Carousel/Gallery */}
-            <div className="relative w-full h-[45vh] md:h-full overflow-hidden">
-              {/* Mobile Flex Gallery */}
-              <div 
-                ref={mobileScrollRef}
-                className="md:hidden flex w-full h-full overflow-x-auto snap-x snap-mandatory scrollbar-hide"
-                style={{ scrollSnapType: "x mandatory" }}
-                onScroll={(e) => {
-                  const scrollLeft = e.currentTarget.scrollLeft;
-                  const width = e.currentTarget.offsetWidth;
-                  if (width > 0) {
-                    const index = Math.round(scrollLeft / width);
-                    if (index !== currentSlide) setCurrentSlide(index);
-                  }
-                }}
-              >
-                {project.gallery.map((img, i) => (
-                  <div key={i} className="flex-shrink-0 w-full h-full snap-center relative">
-                    <motion.div
-                      initial={{ scale: 1.1 }}
-                      whileInView={{ scale: 1 }}
-                      transition={{ duration: 10 }}
-                      className="relative w-full h-full"
-                    >
-                      <Image
-                        src={img}
-                        alt={`${project.title} - ${i + 1}`}
-                        fill
-                        className="object-cover"
-                        priority={i === 0}
-                        referrerPolicy="no-referrer"
-                        onClick={() => setIsZoomed(true)}
-                      />
-                    </motion.div>
-                  </div>
-                ))}
-              </div>
-
+            {/* Left Column: Carousel/Gallery (desktop only — mobile uses the rounded carousel in the sidebar) */}
+            <div className="hidden md:block relative w-full h-full overflow-hidden md:shrink">
               {/* Desktop Animated Carousel */}
-              <div className="hidden md:block absolute inset-0 cursor-zoom-in" onClick={() => setIsZoomed(true)}>
+              <div className="absolute inset-0 cursor-zoom-in" onClick={() => setIsZoomed(true)}>
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={currentSlide}
@@ -177,39 +130,47 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
               </div>
 
               {/* Zoom Button */}
-              <button 
+              <button
                 onClick={() => setIsZoomed(true)}
-                className="absolute top-6 left-6 z-[110] text-white/50 hover:text-white transition-all hover:scale-110 p-2 bg-black/20 backdrop-blur rounded-full md:block hidden"
+                className="absolute top-6 left-6 z-[110] text-white/50 hover:text-white transition-all hover:scale-110 p-2 bg-black/20 backdrop-blur rounded-full"
               >
                 <Maximize2 size={18} />
               </button>
 
-              {/* Navigation Controls (Desktop only or shared) */}
+              {/* Navigation Controls */}
               {project.gallery.length > 1 && (
                 <>
                   <button
                     onClick={prevSlide}
-                    className="hidden md:flex absolute left-6 top-1/2 -translate-y-1/2 z-[110] text-white/50 hover:text-white transition-all hover:scale-110"
+                    aria-label="Previous image"
+                    className="flex absolute left-6 top-1/2 -translate-y-1/2 z-[110] text-white/50 hover:text-white transition-all hover:scale-110 p-2"
                   >
-                    <ChevronLeft size={48} strokeWidth={0.75} />
+                    <ChevronLeft className="w-12 h-12" strokeWidth={1} />
                   </button>
                   <button
                     onClick={nextSlide}
-                    className="hidden md:flex absolute right-6 top-1/2 -translate-y-1/2 z-[110] text-white/50 hover:text-white transition-all hover:scale-110"
+                    aria-label="Next image"
+                    className="flex absolute right-6 top-1/2 -translate-y-1/2 z-[110] text-white/50 hover:text-white transition-all hover:scale-110 p-2"
                   >
-                    <ChevronRight size={48} strokeWidth={0.75} />
+                    <ChevronRight className="w-12 h-12" strokeWidth={1} />
                   </button>
 
                   {/* Pagination indicators */}
-                  <div className="absolute bottom-4 md:bottom-10 left-6 md:left-10 right-6 md:right-10 z-[110] flex gap-1">
+                  <div className="absolute bottom-10 left-10 right-10 z-[110] flex gap-1">
                     {project.gallery.map((_, i) => (
-                      <div
+                      <button
                         key={i}
-                        className={cn(
-                          "flex-1 h-0.5 transition-all duration-700",
-                          currentSlide === i ? "bg-white" : "bg-white/20"
-                        )}
-                      />
+                        onClick={() => setCurrentSlide(i)}
+                        aria-label={`Go to image ${i + 1}`}
+                        className="flex-1 py-2 -my-2 cursor-pointer"
+                      >
+                        <span
+                          className={cn(
+                            "block h-0.5 transition-all duration-700",
+                            currentSlide === i ? "bg-white" : "bg-white/20"
+                          )}
+                        />
+                      </button>
                     ))}
                   </div>
                 </>
@@ -217,7 +178,7 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
             </div>
 
             {/* Right Column: Info Sidebar */}
-            <div className="w-full md:w-96 p-8 md:p-12 border-l border-slate-100 flex flex-col overflow-y-auto bg-white shrink-0">
+            <div className="w-full md:w-96 p-8 md:p-12 md:border-l border-slate-100 flex flex-col overflow-y-auto overscroll-contain bg-white flex-1 min-h-0 md:flex-none">
               <div className="mb-8">
                 <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#0041D2] mb-4 block">
                   Project Detail
@@ -309,10 +270,69 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
                   </div>
                 </div>
 
-                {/* Gallery Strip (Flex) */}
+                {/* Gallery */}
                 <div className="mt-12 pt-8 border-t border-slate-100">
                   <p className="text-[10px] font-bold uppercase tracking-widest text-slate-300 mb-6">Gallery</p>
-                  <div className="relative group">
+
+                  {/* Mobile rounded-edge carousel — replaces the thumbnail strip on phone */}
+                  {project.gallery.length > 0 && (
+                    <div className="md:hidden relative w-full h-100 rounded-2xl overflow-hidden">
+                      <div className="absolute inset-0 cursor-zoom-in" onClick={() => setIsZoomed(true)}>
+                        <AnimatePresence mode="wait">
+                          <motion.div
+                            key={currentSlide}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.5 }}
+                            className="absolute inset-0"
+                          >
+                            <Image
+                              src={project.gallery[currentSlide]}
+                              alt={`${project.title} - view ${currentSlide + 1}`}
+                              fill
+                              className="object-cover"
+                              referrerPolicy="no-referrer"
+                            />
+                          </motion.div>
+                        </AnimatePresence>
+                      </div>
+
+                      {project.gallery.length > 1 && (
+                        <>
+                          <button
+                            onClick={(e) => { e.stopPropagation(); prevSlide(); }}
+                            aria-label="Previous image"
+                            className="absolute left-2 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-8 h-8 rounded-full bg-white/80 backdrop-blur text-slate-700 shadow-md active:scale-95 transition-all"
+                          >
+                            <ChevronLeft size={18} />
+                          </button>
+                          <button
+                            onClick={(e) => { e.stopPropagation(); nextSlide(); }}
+                            aria-label="Next image"
+                            className="absolute right-2 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-8 h-8 rounded-full bg-white/80 backdrop-blur text-slate-700 shadow-md active:scale-95 transition-all"
+                          >
+                            <ChevronRight size={18} />
+                          </button>
+
+                          <div className="absolute bottom-2 left-2 right-2 z-10 flex gap-1">
+                            {project.gallery.map((_, i) => (
+                              <div
+                                key={i}
+                                className={cn(
+                                  "flex-1 h-0.5 rounded-full transition-all duration-700",
+                                  currentSlide === i ? "bg-white" : "bg-white/40"
+                                )}
+                              />
+                            ))}
+                          </div>
+                        </>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Desktop thumbnail strip */}
+                  <div className="hidden md:block relative group">
                     {canScrollStripLeft && (
                       <button
                         onClick={() => scrollStrip('left')}
