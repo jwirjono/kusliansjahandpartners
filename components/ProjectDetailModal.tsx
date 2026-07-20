@@ -16,7 +16,10 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isZoomed, setIsZoomed] = useState(false);
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
+  const [canScrollStripLeft, setCanScrollStripLeft] = useState(false);
+  const [canScrollStripRight, setCanScrollStripRight] = useState(false);
   const mobileScrollRef = useRef<HTMLDivElement>(null);
+  const galleryStripRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (project) {
@@ -43,6 +46,30 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
       });
     }
   }, [currentSlide]);
+
+  const updateStripScrollState = () => {
+    const el = galleryStripRef.current;
+    if (!el) return;
+    setCanScrollStripLeft(el.scrollLeft > 4);
+    setCanScrollStripRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 4);
+  };
+
+  useEffect(() => {
+    updateStripScrollState();
+    window.addEventListener('resize', updateStripScrollState);
+    return () => window.removeEventListener('resize', updateStripScrollState);
+  }, [project]);
+
+  useEffect(() => {
+    const thumb = galleryStripRef.current?.children[currentSlide] as HTMLElement | undefined;
+    thumb?.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+  }, [currentSlide]);
+
+  const scrollStrip = (direction: 'left' | 'right') => {
+    const el = galleryStripRef.current;
+    if (!el) return;
+    el.scrollBy({ left: direction === 'left' ? -el.clientWidth * 0.8 : el.clientWidth * 0.8, behavior: 'smooth' });
+  };
 
   if (!project) return null;
 
@@ -285,25 +312,49 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
                 {/* Gallery Strip (Flex) */}
                 <div className="mt-12 pt-8 border-t border-slate-100">
                   <p className="text-[10px] font-bold uppercase tracking-widest text-slate-300 mb-6">Gallery</p>
-                  <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide snap-x -mx-2 px-2">
-                    {project.gallery.map((img, i) => (
-                      <button 
-                        key={i} 
-                        onClick={() => setCurrentSlide(i)}
-                        className={cn(
-                          "relative aspect-[4/3] h-24 md:h-20 flex-shrink-0 cursor-pointer overflow-hidden rounded-xl border-2 transition-all snap-start",
-                          currentSlide === i ? "border-[#0041D2] scale-95" : "border-transparent opacity-60 hover:opacity-100"
-                        )}
+                  <div className="relative group">
+                    {canScrollStripLeft && (
+                      <button
+                        onClick={() => scrollStrip('left')}
+                        aria-label="Scroll gallery left"
+                        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 flex items-center justify-center w-8 h-8 rounded-full bg-white shadow-md text-slate-500 hover:text-[#0041D2] hover:scale-110 transition-all"
                       >
-                        <Image 
-                          src={img} 
-                          alt="" 
-                          fill 
-                          className="object-cover" 
-                          referrerPolicy="no-referrer"
-                        />
+                        <ChevronLeft size={18} />
                       </button>
-                    ))}
+                    )}
+                    <div
+                      ref={galleryStripRef}
+                      onScroll={updateStripScrollState}
+                      className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide snap-x -mx-2 px-2"
+                    >
+                      {project.gallery.map((img, i) => (
+                        <button
+                          key={i}
+                          onClick={() => setCurrentSlide(i)}
+                          className={cn(
+                            "relative aspect-[4/3] h-24 md:h-20 flex-shrink-0 cursor-pointer overflow-hidden rounded-xl border-2 transition-all snap-start",
+                            currentSlide === i ? "border-[#0041D2] scale-95" : "border-transparent opacity-60 hover:opacity-100"
+                          )}
+                        >
+                          <Image
+                            src={img}
+                            alt=""
+                            fill
+                            className="object-cover"
+                            referrerPolicy="no-referrer"
+                          />
+                        </button>
+                      ))}
+                    </div>
+                    {canScrollStripRight && (
+                      <button
+                        onClick={() => scrollStrip('right')}
+                        aria-label="Scroll gallery right"
+                        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 flex items-center justify-center w-8 h-8 rounded-full bg-white shadow-md text-slate-500 hover:text-[#0041D2] hover:scale-110 transition-all"
+                      >
+                        <ChevronRight size={18} />
+                      </button>
+                    )}
                   </div>
                 </div>
               </div>

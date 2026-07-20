@@ -68,42 +68,46 @@ export const PROJECTS: Project[] = [
   },
     {
     id: '3',
-    title: 'Griya-UNIMPLEMENTED',
-    category: ['Commercial'],
-    typology: 'Museum & Exhibition',
-    year: '2020',
-    location: 'Bandung, Indonesia',
-    image: images.merdeka.image,
-    gallery: images.merdeka.gallery,
-    stage:"",
-    descriptionTitle:"",
-    description: ['A landmark cultural hub inspired by the movement of tides, featuring fluid white concrete forms that seamlessly integrate with the coastal landscape. The project challenges traditional museum typology by creating a continuous loop of public space both inside and outside the galleries.'],
+    title: 'PARAHYANGAN UNIVERSITY-ARCHITECTURE & CIVIC ENGINEERING TOWER',
+    category: ['Education'],
+    typology: 'Education',
+    year: '2025',
+    location: 'Cikamuning, Indonesia',
+    image: images.parahyanganACET.image,
+    gallery: images.parahyanganACET.gallery,
+    stage:"Full Scope Conceptual Design - PBG Submission",
+    descriptionTitle:"Fluid spatial interaction with inclusive academic environments and ecological responsibility",
+    description: ['Design Manifesto - The foundational philosophy of the project emphasizes that the facility is not merely a "container of education". Instead, it is designed to act as a "catalyst of collaboration". It is intended to be a "landscape of belonging" for every thinker and designer who utilizes the space.',
+      'The project proposes a design for the new Faculty of Architecture & Civil Engineering at the Parahyangan Catholic University, Cikamuning Campus. Designed by Kevin Kristofan Rinaldi Kusliansjah and Muhammad Damar Alam Permana, the core concept intertwines the disciplines of architecture and civil engineering into a unified, cohesive built environment. The primary goal is to encourage interdisciplinary learning and collaborative innovation among students and faculty.',
+      'The project addresses structural and social needs through three main design pillars: Connectivity: The architecture promotes "Interwoven Academic Synergy," ensuring fluid spatial interaction throughout the campus; Inclusivity: By focusing on "Universal Access & Shared Identity," the project fosters an inclusive academic environment; Sustainability: The campus prioritizes ecological responsibility through passive, productive, and regenerative design strategies.'
+    ],
     details: {
-      siteArea: '45,000 sqm',
-      buildingArea: '120,000 sqm',
+      siteArea: '12,034 SQM',
+      buildingArea: '23,909 SQM',
       
-      teamP:[],
-      teamA:[]
+      teamP:['Ar. Kevin Kristofan Rinaldi Kusliansjah, IAI'],
+      teamA:['Muhammad Damar Alam P.']
     }
   },
     {
     id: '4',
-    title: 'Data Center-UNIMPLEMENTED',
-    category: ['Commercial'],
-    typology: 'Museum & Exhibition',
-    year: '2020',
+    title: 'SMPN 22 BANDUNG',
+    category: ['Education'],
+    typology: 'Education',
+    year: '2025',
     location: 'Bandung, Indonesia',
-    image: images.merdeka.image,
-    gallery: images.merdeka.gallery,
-    stage:"",
-    descriptionTitle:"",
-    description: ['A landmark cultural hub inspired by the movement of tides, featuring fluid white concrete forms that seamlessly integrate with the coastal landscape. The project challenges traditional museum typology by creating a continuous loop of public space both inside and outside the galleries.'],
+    image: images.smpn22.image,
+    gallery: images.smpn22.gallery,
+    stage:"Full Scope Conceptual Design - PBG Submission",
+    descriptionTitle:"Ascend and Adapt: The Future of Urban Learning at SMPN 22",
+    description: ["The proposed redesign of SMPN 22, located in the heart of Bandung at Jl. Supratman No. 24. This architectural vision transforms the traditional school building into a breathable, tropical learning environment that directly responds to its dense urban context. Conceived as an educational journey, the building features a unique stepped massing design where each level ascends like a staircase, thoughtfully symbolizing the students' academic progression. By integrating passive strategies, such as open spiral staircases, central voids for maximum cross-ventilation, and protective secondary skins, the design ensures natural thermal comfort while significantly reducing reliance on air conditioning. Beyond the classroom, the campus is crafted to resolve existing local traffic bottlenecks and serve as a vibrant community hub outside of regular school hours. This project demonstrates that modern educational spaces can simultaneously nurture growing minds, adapt to a challenging climate, and enrich the surrounding cityscape.",
+    ],
     details: {
-      siteArea: '45,000 sqm',
-      buildingArea: '120,000 sqm',
+      siteArea: '3,527 SQM',
+      buildingArea: '1,612 SQM',
       
-      teamP:[],
-      teamA:[]
+      teamP:["Ar. Kevin Kristofan Rinaldi Kusliansjah, IAI"],
+      teamA:["-"]
     }
   },
   {
