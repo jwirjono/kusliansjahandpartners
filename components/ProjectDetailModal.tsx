@@ -54,6 +54,16 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
     thumb?.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
   }, [currentSlide]);
 
+  useEffect(() => {
+  const handler = (e: MouseEvent) => e.preventDefault();
+
+  document.addEventListener("contextmenu", handler);
+
+  return () => {
+    document.removeEventListener("contextmenu", handler);
+  };
+}, []);
+
   const scrollStrip = (direction: 'left' | 'right') => {
     const el = galleryStripRef.current;
     if (!el) return;
@@ -116,14 +126,14 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
                       transition={{ duration: 10, ease: "easeOut" }}
                       className="absolute inset-0"
                     >
-                      <Image
-                        src={project.gallery[currentSlide]}
-                        alt={`${project.title} - view ${currentSlide + 1}`}
-                        fill
-                        className="object-cover"
-                        priority
-                        referrerPolicy="no-referrer"
-                      />
+                        <Image
+                          src={project.gallery[currentSlide]}
+                          alt={`${project.title} - view ${currentSlide + 1}`}
+                          fill
+                          className="object-cover"
+                          priority
+                          referrerPolicy="no-referrer"
+                        />
                     </motion.div>
                   </motion.div>
                 </AnimatePresence>

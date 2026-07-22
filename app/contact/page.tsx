@@ -32,33 +32,32 @@ export default function ContactPage() {
             <Map />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-12 border-t border-slate-100">
               <div>
-                <h4 className="text-[10px] font-bold uppercase tracking-widest text-[#0041D2] mb-4">Bejing HQ</h4>
+                <h4 className="text-[10px] font-bold uppercase tracking-widest text-[#0041D2] mb-4">BANDUNG HQ</h4>
                 <p className="text-sm font-light text-slate-500 leading-relaxed uppercase">
-                  No. 12 Huayuanli, Chaoyang District<br/>
-                  Beijing, China 100029
+                  Bandung, Indonesia
                 </p>
               </div>
               <div>
-                <h4 className="text-[10px] font-bold uppercase tracking-widest text-[#0041D2] mb-4">Los Angeles</h4>
+                <h4 className="text-[10px] font-bold uppercase tracking-widest text-[#0041D2] mb-4">JABODETABEK OFFICE</h4>
                 <p className="text-sm font-light text-slate-500 leading-relaxed uppercase">
-                  925 N La Brea Ave, Suite 400<br/>
-                  Los Angeles, CA 90038
-                </p>
-              </div>
-              <div>
-                <h4 className="text-[10px] font-bold uppercase tracking-widest text-[#0041D2] mb-4">Inquiries</h4>
-                <p className="text-sm font-light text-slate-500 leading-relaxed uppercase">
-                  press@madpulse.com<br/>
-                  careers@madpulse.com
+                  BSD, Indonesia
                 </p>
               </div>
               <div>
                 <h4 className="text-[10px] font-bold uppercase tracking-widest text-[#0041D2] mb-4">Connect</h4>
                 <p className="text-sm font-light text-slate-500 leading-relaxed uppercase">
-                  Instagram / Weibo<br/>
-                  LinkedIn / WeChat
+                  Instagram <br/>
+                  LinkedIn <br/ >
+                  Whatsapp
                 </p>
               </div>
+              <div>
+                <h4 className="text-[10px] font-bold uppercase tracking-widest text-[#0041D2] mb-4">Inquiries</h4>
+                <p className="text-sm font-light text-slate-500 leading-relaxed uppercase">
+                  kevin@kusliansjahandpartners.com<br/>
+                </p>
+              </div>
+              
             </div>
           </div>
         </div>
