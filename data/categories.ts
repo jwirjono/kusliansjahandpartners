@@ -9,5 +9,6 @@ export   const categories = [
     'Residential',
     'Sports Infrastructure',
     'Hospitality',
-    'Transportation'
+    'Transportation',
+    'Interior'
   ];
