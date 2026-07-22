@@ -21,6 +21,28 @@ export interface Project {
   };
 }
 
+// Template for data
+// {
+//     id: '5',
+//     title: '',
+//     category: ['l'],
+//     typology: '',
+//     year: '',
+//     location: '',
+//     image: images.merdeka.image,
+//     gallery: images.merdeka.gallery,
+//     stage:"",
+//     descriptionTitle:"",
+//     description: [''],
+//     details: {
+//       siteArea: '',
+//       buildingArea: '',
+      
+//       teamP:[],
+//       teamA:[]
+//     }
+//   },
+
 export const PROJECTS: Project[] = [
   {
     id: '1',
@@ -112,19 +134,19 @@ export const PROJECTS: Project[] = [
   },
   {
     id: '5',
-    title: 'Barberworks1-UNIMPLEMENTED',
-    category: ['Commercial'],
-    typology: 'Museum & Exhibition',
-    year: '2020',
-    location: 'Bandung, Indonesia',
+    title: 'SLEMAN CULTURAL PARK',
+    category: ['Exhibition'],
+    typology: '',
+    year: '',
+    location: '',
     image: images.merdeka.image,
     gallery: images.merdeka.gallery,
     stage:"",
     descriptionTitle:"",
-    description: ['A landmark cultural hub inspired by the movement of tides, featuring fluid white concrete forms that seamlessly integrate with the coastal landscape. The project challenges traditional museum typology by creating a continuous loop of public space both inside and outside the galleries.'],
+    description: [''],
     details: {
-      siteArea: '45,000 sqm',
-      buildingArea: '120,000 sqm',
+      siteArea: '',
+      buildingArea: '',
       
       teamP:[],
       teamA:[]

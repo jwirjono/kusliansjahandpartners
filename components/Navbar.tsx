@@ -247,21 +247,21 @@ export default function Navbar({ onSearchOpen }: NavbarProps) {
           transition={{ delay: 0.1 + 5 * 0.05 }}
         >
           <Link
-  href="/careers"
-  onClick={() => setIsMobileMenuOpen(false)}
-  className="flex items-center gap-2 text-md uppercase text-[#0041D2] underline underline-offset-4 mb-4"
->
-  <span>LINKEDIN</span>
-  <ChevronRight size={16} />
-</Link>
-<Link
-  href="/careers"
-  onClick={() => setIsMobileMenuOpen(false)}
-  className="flex items-center gap-2 text-md uppercase text-[#0041D2] underline underline-offset-4 mb-4"
->
-  <span>INSTAGRAM</span>
-  <ChevronRight size={16} />
-</Link>
+            href="https://www.linkedin.com/company/kusliansjah-partners/"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="flex items-center gap-2 text-md uppercase text-[#0041D2] underline underline-offset-4 mb-4"
+          >
+            <span>LINKEDIN</span>
+            <ChevronRight size={16} />
+          </Link>
+          <Link
+            href="https://www.instagram.com/kusliansjahpartners"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="flex items-center gap-2 text-md uppercase text-[#0041D2] underline underline-offset-4 mb-4"
+          >
+          <span>INSTAGRAM</span>
+          <ChevronRight size={16} />
+        </Link>
         </motion.div>
 
         {/* Bottom Section */}

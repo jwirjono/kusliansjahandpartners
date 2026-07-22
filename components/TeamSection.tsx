@@ -12,14 +12,14 @@ const TEAM = [
     name: "Ar. Kevin Kristofan Rinaldi Kusliansjah, IAI",
     role: "Founding Partner / Lead Architect",
     image: kevin,
-    portfolio:"https://www.linkedin.com/in/jevon-wirjono-48b60215a/",
+    portfolio:"https://www.linkedin.com/in/kevin-kristofan-rinaldi-kusliansjah/",
     bio: "Registered Architect and design professional with expertise in delivering commercially driven, buildable design solutions across retail, mixed-use, and institutional projects."
   },
   {
     name: "Dr. Ar. Ir. Yohanes Karyadi Kusliansjah, MT., IAI",
     role: "Architect",
     image: karyadi,
-    portfolio:"https://www.linkedin.com/in/jevon-wirjono-48b60215a/",
+    portfolio:"https://www.linkedin.com/in/karyadi-kusliansjah-1a832114b/",
     bio: "Leads our sustainability initiatives, ensuring every structure breathes and evolves with its environment."
   }
 ];

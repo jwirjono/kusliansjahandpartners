@@ -7,6 +7,7 @@ import { PROJECTS, Project } from '@/data/projects';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import { ChevronDown } from 'lucide-react';
+import { categories } from '@/data/categories';
 
 interface ProjectFilterProps {
   onProjectSelect?: (project: Project) => void;
@@ -16,19 +17,7 @@ export default function ProjectFilter({ onProjectSelect }: ProjectFilterProps) {
   const [activeCategory, setActiveCategory] = useState<string>('All');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const categories = [
-    'All',
-    'Adaptive Reuse',
-    'Mixed Use',
-    'Office',
-    'Education',
-    'Exhibition',
-    'Gallery',
-    'Residential',
-    'Sports Infrastructure',
-    'Hospitality',
-    'Transportation'
-  ];
+
 
   const filteredProjects = activeCategory === 'All'
     ? PROJECTS
