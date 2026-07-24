@@ -212,4 +212,24 @@ export const PROJECTS: Project[] = [
       teamA:[]
     }
   },
+  {
+    id: '9',
+    title: 'Sleman waterpark',
+    category: ['Adaptive Reuse', 'Mixed Use'],
+    typology: 'Museum & Exhibition',
+    year: '2020',
+    location: 'Bandung, Indonesia',
+    image: images.merdeka.image,
+    gallery: images.merdeka.gallery,
+    stage:"",
+    descriptionTitle:"",
+    description: ['A landmark cultural hub inspired by the movement of tides, featuring fluid white concrete forms that seamlessly integrate with the coastal landscape. The project challenges traditional museum typology by creating a continuous loop of public space both inside and outside the galleries.'],
+    details: {
+      siteArea: '45,000 sqm',
+      buildingArea: '120,000 sqm',
+      
+      teamP:[],
+      teamA:[]
+    }
+  },
 ];
