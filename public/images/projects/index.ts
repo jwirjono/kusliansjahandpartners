@@ -18,6 +18,21 @@ import d1 from './4/1.png'
 import d2 from './4/2.png'
 import dCover from './4/cover.png'
 
+import e1 from './5/1.png'
+import e2 from './5/2.png'
+import e3 from './5/3.png'
+import e4 from './5/4.png'
+import e5 from './5/5.png'
+import e6 from './5/6.png'
+import e7 from './5/7.png'
+import e8 from './5/8.png'
+import e9 from './5/9.png'
+import e10 from './5/10.png'
+import e11 from './5/11.png'
+import e12 from './5/12.png'
+import e13 from './5/13.png'
+import eCover from './5/cover.png'
+
 
 export const images = {
   merdeka: {
@@ -35,5 +50,9 @@ export const images = {
   smpn22:{
     image: dCover,
     gallery:[d1,d2]
-  }
+  },
+  slemanCulturePark:{
+    image: eCover,
+    gallery:[e1,e2,e3,e4,e5,e6,e7,e8,e9,e10,e11,e12,e13]
+  },
 }
