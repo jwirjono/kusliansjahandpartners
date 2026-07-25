@@ -33,6 +33,16 @@ import e12 from './5/12.jpg'
 import e13 from './5/13.jpg'
 import eCover from './5/cover.png'
 
+import f1 from './6/1.png'
+import f2 from './6/2.png'
+import f3 from './6/3.png'
+import f4 from './6/4.png'
+import f5 from './6/5.png'
+import f6 from './6/6.png'
+import f7 from './6/7.png'
+import f8 from './6/8.png'
+import fCover from './6/cover.png'
+
 
 export const images = {
   merdeka: {
@@ -55,4 +65,8 @@ export const images = {
     image: eCover,
     gallery:[e1,e2,e3,e4,e5,e6,e7,e8,e9,e10,e11,e12,e13]
   },
+  suniarajaDesignCenter:{
+    image: fCover,
+    gallery:[f1,f2,f3,f4,f5,f6,f7,f8]
+  }
 }
