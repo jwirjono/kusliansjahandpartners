@@ -84,7 +84,7 @@ export const PROJECTS: Project[] = [
     details: {
       siteArea: '2279 SQM',
       buildingArea: '6380 SQM', 
-      teamP:["PT Tri Bagan Kemitraan","PT Larascipta Architect Internusa Design"],
+      teamP:["PT Tri Bagan Kemitraan", "PT Larascipta Architect Internusa Design"],
       teamA:["Ar. Kevin Kristofan Rinaldi Kusliansjah, IAI"]
     }
   },
@@ -136,20 +136,20 @@ export const PROJECTS: Project[] = [
     id: '5',
     title: 'SLEMAN CULTURAL PARK',
     category: ['Exhibition'],
-    typology: '',
-    year: '',
-    location: '',
+    typology: 'Exhibition',
+    year: '2021',
+    location: 'Sleman, Indonesia',
     image: images.slemanCulturePark.image,
     gallery: images.slemanCulturePark.gallery,
-    stage:"",
-    descriptionTitle:"",
+    stage:"Full Scope Conceptual Design - TOP 30 Lixil Competition",
+    descriptionTitle:"Memayu Hayuning Buwana - Manunggaling Space Culture & Spiritual Culture",
     description: [''],
     details: {
-      siteArea: '',
-      buildingArea: '',
+      siteArea: '23,134 SQM',
+      buildingArea: '5,324 SQM',
       
-      teamP:[],
-      teamA:[]
+      teamP:["Dr. Rahadhian PH, ST, MT, IAI"],
+      teamA:["Ar. Kevin Kristofan Rinaldi Kusliansjah, IAI", "Favian Muhammad Rifqi", "Handoyo Lawiguna"]
     }
   },
   {
