@@ -33,6 +33,32 @@ import e12 from './5/12.jpg'
 import e13 from './5/13.jpg'
 import eCover from './5/cover.png'
 
+import f1 from './6/1.png'
+import f2 from './6/2.png'
+import f3 from './6/3.png'
+import f4 from './6/4.png'
+import f5 from './6/5.png'
+import f6 from './6/6.png'
+import f7 from './6/7.png'
+import f8 from './6/8.png'
+import fCover from './6/cover.png'
+
+import g1 from './7/1.png'
+import g2 from './7/2.png'
+import g3 from './7/3.png'
+import g4 from './7/4.png'
+import g5 from './7/5.png'
+import g6 from './7/6.png'
+import g7 from './7/7.png'
+import g8 from './7/8.png'
+import g9 from './7/9.png'
+import g10 from './7/10.png'
+import g11 from './7/11.png'
+import g12 from './7/12.png'
+import g13 from './7/13.png'
+import g14 from './7/14.png'
+import g15 from './7/15.png'
+import gCover from './7/cover.png'
 
 export const images = {
   merdeka: {
@@ -54,5 +80,13 @@ export const images = {
   slemanCulturePark:{
     image: eCover,
     gallery:[e1,e2,e3,e4,e5,e6,e7,e8,e9,e10,e11,e12,e13]
+  },
+  suniaradjadesigncentre:{
+    image: fCover,
+    gallery:[f1,f2,f3,f4,f5,f6,f7,f8]
+  },
+  GubengTransitHub:{
+    image: gCover,
+    gallery:[g1,g2,g3,g4,g5,g6,g7,g8,g9,g10,g11,g12,g13,g14,g15]
   },
 }
