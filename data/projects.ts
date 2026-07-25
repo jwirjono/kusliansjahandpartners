@@ -155,6 +155,47 @@ export const PROJECTS: Project[] = [
   },
   {
     id: '6',
+    title: 'SUNIARADJA DESIGN CENTER',
+    category: ['Adaptive Reuse', 'Mixed Use'],
+    typology: 'Mixed Use & Commercial',
+    year: '2021',
+    location: 'Bandung, Indonesia',
+    image: images.suniaradjadesigncentre.image,
+    gallery: images.suniaradjadesigncentre.gallery,
+    stage:"Best Design Award - Full Scope Conceptual Design - Design Development",
+    descriptionTitle:"Interlock Between Functions",
+    description: ['S U N I A R A D J A   D E S I G N   C E N T R E  is a building that serves as a gateway to showcase technological inventions in building design by discussing and gathering processes and presenting products that focus on building materials in the architectural and interior design fields. Suniaradja Design Center was designed using the INTERLOCK design concept because this concept follows the principle of a joint-construction of materials that lock each other. The INTERLOCK concept is implemented in the Suniaradja Design Center mass form which is visualized as a single building (mass 1) with a layered floor view that looks at the end of the building mass as stacked and interlocking masses that address the GSB 0 building. The mass configuration also forms an Innercourtyard which is an open center point at the Suniaradja Design Centre.'
+      ,'Suniaradja Design Centre is located at the Gate of the Suniaradja Building Material Center Area, Bandung City. As Response to Via Duct Railway ICON & The attitude of the Gate needs to be addressed because the site is in the railroad viaduct node area, the gate for airplanes passing through the city of Bandung. Thus, the Suniaradja Design Center building becomes a LANDMARK for the central gate of Bandung City which is designed using the Neo Art Deco design theme where there is an accent tower which is a symbol of an important and iconic building. In addition, along the sides of Jalan Station Timur, the facade of the Suniaradja Design Center uses 3D LED panels with a 360x360 module that makes the atmosphere of Jalan Station Timur brighter and less scary at night. The 3D LED panel functions as a digital advertising media that is seen directly by train users entering and leaving Bandung.'],
+    details: {
+      siteArea: '3,400 SQM',
+      buildingArea: '7,140 SQM',
+      
+      teamP:["Ar. Kevin Kristofan Rinaldi Kusliansjah, IAI"],
+      teamA:["-"]
+    }
+  },
+  {
+    id: '7',
+    title: 'GUBENG TRANSIT HUB',
+    category: ['Adaptive Reuse', 'Mixed Use'],
+    typology: 'Museum & Exhibition',
+    year: '2021',
+    location: 'Bandung, Indonesia',
+    image: images.merdeka.image,
+    gallery: images.merdeka.gallery,
+    stage:"",
+    descriptionTitle:"",
+    description: ['A landmark cultural hub inspired by the movement of tides, featuring fluid white concrete forms that seamlessly integrate with the coastal landscape. The project challenges traditional museum typology by creating a continuous loop of public space both inside and outside the galleries.'],
+    details: {
+      siteArea: '45,000 sqm',
+      buildingArea: '120,000 sqm',
+      
+      teamP:[],
+      teamA:[]
+    }
+  },
+  {
+    id: '8',
     title: 'Barberworks2-UNIMPLEMENTED',
     category: ['Adaptive Reuse', 'Mixed Use'],
     typology: 'Museum & Exhibition',
@@ -174,7 +215,27 @@ export const PROJECTS: Project[] = [
     }
   },
   {
-    id: '7',
+    id: '9',
+    title: 'Barberworks2-UNIMPLEMENTED',
+    category: ['Adaptive Reuse', 'Mixed Use'],
+    typology: 'Museum & Exhibition',
+    year: '2020',
+    location: 'Bandung, Indonesia',
+    image: images.merdeka.image,
+    gallery: images.merdeka.gallery,
+    stage:"",
+    descriptionTitle:"",
+    description: ['A landmark cultural hub inspired by the movement of tides, featuring fluid white concrete forms that seamlessly integrate with the coastal landscape. The project challenges traditional museum typology by creating a continuous loop of public space both inside and outside the galleries.'],
+    details: {
+      siteArea: '45,000 sqm',
+      buildingArea: '120,000 sqm',
+      
+      teamP:[],
+      teamA:[]
+    }
+  },
+  {
+    id: '10',
     title: 'Data center-UNIMPLEMENTED',
     category: ['Adaptive Reuse', 'Mixed Use'],
     typology: 'Museum & Exhibition',
@@ -194,7 +255,7 @@ export const PROJECTS: Project[] = [
     }
   },
   {
-    id: '8',
+    id: '11',
     title: 'Barberworks-UNIMPLEMENTED',
     category: ['Adaptive Reuse', 'Mixed Use'],
     typology: 'Museum & Exhibition',
