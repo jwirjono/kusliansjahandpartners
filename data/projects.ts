@@ -160,8 +160,8 @@ export const PROJECTS: Project[] = [
     typology: 'Mixed Use & Commercial',
     year: '2021',
     location: 'Bandung, Indonesia',
-    image: images.suniaradjadesigncentre.image,
-    gallery: images.suniaradjadesigncentre.gallery,
+    image: images.suniarajaDesignCenter.image,
+    gallery: images.suniarajaDesignCenter.gallery,
     stage:"Best Design Award - Full Scope Conceptual Design - Design Development",
     descriptionTitle:"Interlock Between Functions",
     description: ['S U N I A R A D J A   D E S I G N   C E N T R E  is a building that serves as a gateway to showcase technological inventions in building design by discussing and gathering processes and presenting products that focus on building materials in the architectural and interior design fields. Suniaradja Design Center was designed using the INTERLOCK design concept because this concept follows the principle of a joint-construction of materials that lock each other. The INTERLOCK concept is implemented in the Suniaradja Design Center mass form which is visualized as a single building (mass 1) with a layered floor view that looks at the end of the building mass as stacked and interlocking masses that address the GSB 0 building. The mass configuration also forms an Innercourtyard which is an open center point at the Suniaradja Design Centre.'
