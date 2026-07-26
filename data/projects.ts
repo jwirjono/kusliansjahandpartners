@@ -220,42 +220,48 @@ export const PROJECTS: Project[] = [
   },
   {
     id: '9',
-    title: '',
-    category: [''],
-    typology: '',
-    year: '',
-    location: '',
+    title: 'BARBERWORKS 1ST BRANCH TENANT',
+    category: ['Commercial'],
+    typology: 'Commercial',
+    year: '2024',
+    location: 'Bandung, Indonesia',
     image: images.merdeka.image,
     gallery: images.merdeka.gallery,
-    stage:"",
-    descriptionTitle:"",
-    description: [''],
+    stage:"Full Scope Conceptual Design - FORCON",
+    descriptionTitle:"Anchored in Blue: A Clean and Efficient Workspace Design",
+    description: ['Created to enhance the modern barbering experience, the Rancabolang branch merges striking brand elements with minimalist utility. The resulting design provides a sharp, masculine, and highly functional setting optimized for both professionals and patrons.', 
+      'Exterior & Facade - The building commands attention from the street with a bold, illuminated logo box. A textured upper facade delivers clean architectural lines, while the ground level features a light grey textured concrete base, adding a touch of raw, urban aesthetics to the entryway.', 
+      'Interior Aesthetics - A vibrant Royal Blue Duco finish defines the interior, prominently featured on bespoke furniture to visually unify the space. To prevent the deep blue from overpowering the room, crisp white accents using HPL and Melaminto inside the cabinetry ensure the environment remains luminous and expansive.', 
+      'Spatial Layout - Designed for maximum efficiency, the linear floor plan creates a seamless operational flow. It is neatly organized into distinct zones, including a relaxing waiting lounge, specialized barber stations, and a dedicated mesh capster area.'],
     details: {
-      siteArea: '',
-      buildingArea: '',
+      siteArea: '63 SQM',
+      buildingArea: '42 SQM',
 
-      teamP:[],
-      teamA:[]
+      teamP:["Ar. Kevin Kristofan Rinaldi Kusliansjah, IAI"],
+      teamA:["Nicholas Joshua Djayasaputra, S. Ars"]
     }
   },
   {
     id: '10',
-    title: '',
-    category: ['l'],
-    typology: '',
-    year: '',
-    location: '',
+    title: 'BARBERWORKS 2ND BRANCH TENANT',
+    category: ['Commercial'],
+    typology: 'Commercial',
+    year: '2025',
+    location: 'Bandung, Indonesia',
     image: images.merdeka.image,
     gallery: images.merdeka.gallery,
-    stage:"",
-    descriptionTitle:"",
-    description: [''],
+    stage:"Full Scope Conceptual Design - FORCON",
+    descriptionTitle:"Urban Edge and Royal Blue: A Modern Grooming Experience",
+    description: ['Designed to elevate the contemporary grooming experience, the exterior and interior of the Barberworks branch located at Tubagus Ismail Street seamlessly blend bold brand identity with Minimalist functionality. The spatial design reflects a clean, masculine, and highly efficient environment tailored for both the barbers and their clientele.',
+      'Exterior Identity and Street Presence - The storefront establishes a strong visual anchor on the street, utilizing a prominent display light box to highlight the brand. The upper facade is textured providing a clean, architectural geometry. Grounding the building is a concrete base finished with light grey textured paint, which introduces a subtly raw, urban edge to the entrance.',
+      'Interior Atmosphere and Color Palette - The interior design language is heavily anchored by a striking Royal Blue Duco finish. This vibrant blue is applied extensively across the custom built-in furniture, acting as the primary visual thread that ties the space together. To balance the deep blue and maintain a bright, spacious feel, the design incorporates crisp white accents, specifically utilizing white HPL and Melaminto finishes on the inside of the cabinets.',
+      'Layout and Bespoke Detailing - The linear floor plan is optimized for operational flow, neatly dividing the space into a comfortable waiting area, dedicated barber stations, and a designated mesh capster zone.'],
     details: {
-      siteArea: '',
-      buildingArea: '',
+      siteArea: '35,05 SQM',
+      buildingArea: '35,05 SQM',
 
-      teamP:[],
-      teamA:[]
+      teamP:["Ar. Kevin Kristofan Rinaldi Kusliansjah, IAI"],
+      teamA:["Nicholas Joshua Djayasaputra, S. Ars"]
     }
   },
   {
