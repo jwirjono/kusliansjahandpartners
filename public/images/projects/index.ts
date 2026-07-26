@@ -61,7 +61,7 @@ import g15 from "./7/15.png";
 import gCover from "./7/cover.png";
 
 import h1 from "./8/1.png";
-import h2 from "./8/2.png";
+import h2 from "./8/2.jpg";
 import h3 from "./8/3.png";
 import h4 from "./8/4.png";
 import h5 from "./8/5.png";
