@@ -70,9 +70,9 @@ import h7 from "./8/7.png";
 import h8 from "./8/8.png";
 import h9 from "./8/9.png";
 import h10 from "./8/10.png";
-import h11 from "./8/11.png";
-import h12 from "./8/12.png";
-import h13 from "./8/13.png";
+import h11 from "./8/11.jpg";
+import h12 from "./8/12.jpg";
+import h13 from "./8/13.jpg";
 import hCover from "./8/cover.png";
 
 export const images = {
