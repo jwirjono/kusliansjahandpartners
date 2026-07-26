@@ -177,21 +177,25 @@ export const PROJECTS: Project[] = [
   {
     id: '7',
     title: 'GUBENG TRANSIT HUB',
-    category: ['Adaptive Reuse', 'Mixed Use'],
-    typology: 'Museum & Exhibition',
+    category: ['transportation'],
+    typology: 'Transportation - Transit Hub',
     year: '2021',
-    location: 'Bandung, Indonesia',
+    location: 'Surabaya, Indonesia',
     image: images.merdeka.image,
     gallery: images.merdeka.gallery,
-    stage:"",
-    descriptionTitle:"",
-    description: ['A landmark cultural hub inspired by the movement of tides, featuring fluid white concrete forms that seamlessly integrate with the coastal landscape. The project challenges traditional museum typology by creating a continuous loop of public space both inside and outside the galleries.'],
+    stage:"Full Scope Conceptual Design - Competition",
+    descriptionTitle:"Harmonizing Timelines - An Urban Catalyst for Sustainable Transit",
+    description: ['The project reuses Gubeng station for sustainable transit hub development, integrating old and new structures to improve connectivity and functionality. It emphasizes adaptive reuse, enhanced circulation, and infrastructure upgrades, including high-speed rail elevation. The design aims to harmonize existing and future transit systems, supporting transit-oriented development and city skyline impact reduction.',
+      'Integration of Old and New Transit Infrastructure: The design concept centers on making the old Gubeng Station building a point of interest (POI) within the new transit hub. The axis of the old station is used as the basis for massing and landscape arrangement, ensuring that the historical structure is harmoniously integrated with new developments.',
+      'Transit-Oriented Development (TOD) Framework: The Gubeng Station area is planned as a TOD, integrating multiple modes of transportation such as LRT (Light Rail Transit), MAT (Mass Rapid Transit), conventional trains, and high-speed rail. This integration aims to enhance connectivity and accessibility within Surabaya.',
+      'Adaptive Reuse and Sustainable Movement: The project emphasizes the adaptive reuse of obsolete public and transit hubs, promoting sustainability by repurposing existing infrastructure rather than demolishing and rebuilding. This approach reduces environmental impact and preserves cultural heritage.',
+      'Improved Connectivity and User Experience: The plan addresses the previously poor relationship between the old and new Gubeng stations. The new design connects the two via a basement, with circulation and supporting facilities added to improve passenger flow and avoid conflicts between train operations and pedestrian movement.'],
     details: {
-      siteArea: '45,000 sqm',
-      buildingArea: '120,000 sqm',
+      siteArea: '130,000 SQM',
+      buildingArea: '56,000 SQM',
       
-      teamP:[],
-      teamA:[]
+      teamP:["Ar. Kevin Kristofan Rinaldi Kusliansjah, IAI"],
+      teamA:["Steffan Christian", "Joshua Nathanael P."]
     }
   },
   {
