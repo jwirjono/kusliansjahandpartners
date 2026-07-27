@@ -75,6 +75,15 @@ import h12 from "./8/12.jpg";
 import h13 from "./8/13.jpg";
 import hCover from "./8/cover.png";
 
+import k1 from "./11/1.png";
+import k2 from "./11/2.png";
+import k3 from "./11/3.png";
+import k4 from "./11/4.png";
+import k5 from "./11/5.png";
+import k6 from "./11/6.png";
+import k7 from "./11/7.png";
+import kCover from "./11/cover.png";
+
 export const images = {
   merdeka: {
     image: a1,
@@ -107,5 +116,9 @@ export const images = {
   SHHRChurchComplex: {
     image: hCover,
     gallery: [h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13],
+  },
+  BPHouse: {
+    image: kCover,
+    gallery: [k1, k2, k3, k4, k5, k6, k7],
   },
 };
