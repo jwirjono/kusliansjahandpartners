@@ -75,6 +75,25 @@ import h12 from "./8/12.jpg";
 import h13 from "./8/13.jpg";
 import hCover from "./8/cover.png";
 
+import i1 from "./9/1.png";
+import i2 from "./9/2.png";
+import i3 from "./9/3.png";
+import i4 from "./9/4.png";
+import i5 from "./9/5.png";
+import iCover from "./9/cover.png";
+
+import j1 from "./10/1.png";
+import j2 from "./10/2.png";
+import j3 from "./10/3.png";
+import j4 from "./10/4.png";
+import j5 from "./10/5.png";
+import j6 from "./10/6.png";
+import j7 from "./10/7.png";
+import j8 from "./10/8.png";
+import j9 from "./10/9.png";
+import j10 from "./10/10.png";
+import jCover from "./10/cover.png";
+
 import k1 from "./11/1.png";
 import k2 from "./11/2.png";
 import k3 from "./11/3.png";
@@ -116,6 +135,14 @@ export const images = {
   SHHRChurchComplex: {
     image: hCover,
     gallery: [h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13],
+  },
+  Barberworks1stTenant: {
+    image: iCover,
+    gallery: [i1, i2, i3, i4, i5],
+  },
+  Barberworks2ndTenant: {
+    image: jCover,
+    gallery: [j1, j2, j3, j4, j5, j6, j7, j8, j9, j10],
   },
   BPHouse: {
     image: kCover,
