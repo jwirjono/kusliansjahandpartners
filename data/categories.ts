@@ -1,14 +1,19 @@
 export   const categories = [
     'All',
-    'Adaptive Reuse',
-    'Mixed Use',
-    'Office',
+    'Commercial',
+    'Conservation',
     'Education',
     'Exhibition',
     'Gallery',
+    'Hospitality',
+    'Humanitarian',
+    'Interior',
+    'IT Infrastructure',
+    'Masterplan',
+    'Mixed Use',
+    'Office',
     'Residential',
     'Sports Infrastructure',
-    'Hospitality',
     'Transportation',
-    'Interior'
+    'Worship Facility'
   ];
