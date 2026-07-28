@@ -160,7 +160,7 @@ export default function Navbar({ onSearchOpen }: NavbarProps) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className="fixed inset-0 z-[120] backdrop-blur-xl bg-white-400/50 flex flex-col"
+      className="fixed inset-0 z-[120] backdrop-blur-xl bg-black/30 flex flex-col"
     >
 
       <div className="flex items-center justify-between px-6 h-20">
@@ -185,14 +185,14 @@ export default function Navbar({ onSearchOpen }: NavbarProps) {
             setIsMobileMenuOpen(false);  
             onSearchOpen();              
           }}
-            className="p-2"
+            className="p-2 text-white"
           >
             <Search size={20} />
           </button>
 
           <button
             onClick={() => setIsMobileMenuOpen(false)}
-            className="p-2 text-[#0041D2]"
+            className="p-2 text-white"
           >
             <X size={24} />
           </button>
@@ -201,7 +201,7 @@ export default function Navbar({ onSearchOpen }: NavbarProps) {
       </div>
 
       {/* Content Wrapper */}
-      <div className="flex flex-col justify-between h-full px-6 pt-8 pb-10">
+      <div className="flex flex-col justify-between h-full px-10 pt-8 pb-10">
         
         {/* Menu Items */}
         <div className="flex flex-col gap-6 text-3xl font-bold uppercase tracking-tight">
@@ -234,7 +234,7 @@ export default function Navbar({ onSearchOpen }: NavbarProps) {
                       : `/#${item.toLowerCase()}`
                   )
                 }
-                className="hover:text-[#0041D2] transition-colors"
+                className="hover:text-[#0041D2] text-white"
               >
                 {item}
               </Link>
@@ -249,7 +249,7 @@ export default function Navbar({ onSearchOpen }: NavbarProps) {
           <Link
             href="https://www.linkedin.com/company/kusliansjah-partners/"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="flex items-center gap-2 text-md uppercase text-[#0041D2] underline underline-offset-4 mb-4"
+            className="flex items-center gap-2 text-md uppercase text-white underline underline-offset-4 mb-4"
           >
             <span>LINKEDIN</span>
             <ChevronRight size={16} />
@@ -257,7 +257,7 @@ export default function Navbar({ onSearchOpen }: NavbarProps) {
           <Link
             href="https://www.instagram.com/kusliansjahpartners"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="flex items-center gap-2 text-md uppercase text-[#0041D2] underline underline-offset-4 mb-4"
+            className="flex items-center gap-2 text-md uppercase text-white underline underline-offset-4 mb-4"
           >
           <span>INSTAGRAM</span>
           <ChevronRight size={16} />
@@ -270,7 +270,7 @@ export default function Navbar({ onSearchOpen }: NavbarProps) {
 
           </div>
 
-          <div className="text-xs uppercase tracking-widest text-slate-400">
+          <div className="text-xs uppercase tracking-widest text-slate-100">
             Kusliansjah&Partners
             <br />
             BANDUNG
