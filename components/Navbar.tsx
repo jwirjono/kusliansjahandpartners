@@ -234,7 +234,7 @@ export default function Navbar({ onSearchOpen }: NavbarProps) {
                       : `/#${item.toLowerCase()}`
                   )
                 }
-                className="hover:text-[#0041D2] text-white mix-blend-difference transition-colors"
+                className="hover:text-[#0041D2] transition-colors"
               >
                 {item}
               </Link>
